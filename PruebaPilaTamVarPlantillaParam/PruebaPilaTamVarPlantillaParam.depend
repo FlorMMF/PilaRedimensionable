@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1737136220 source:c:\users\surface\documents\estructura de datos\pruebapilatamvarplantillaparam\vector.cpp
+	<iostream>
+	"Vector.hpp"
+	<cmath>
+
+1737136562 c:\users\surface\documents\estructura de datos\pruebapilatamvarplantillaparam\vector.hpp
+
