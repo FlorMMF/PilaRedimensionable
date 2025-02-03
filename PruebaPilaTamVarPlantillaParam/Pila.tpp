@@ -1,7 +1,17 @@
     #include <iostream>
 
 
+/**
 
+ * \file Pila.tpp
+
+ * Este archivo contiene el desarrollo de los m&eacute;todos que simulan una pila
+
+ * \author Flor Machado y Elias Peregrina
+
+ * \date 03/02/2025
+
+ */
 
 //******************************************
 template <typename Tipo, int cap>

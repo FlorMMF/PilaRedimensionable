@@ -2,7 +2,18 @@
 #include "Vector.hpp"
 #include <cmath>
 using  namespace std;
-//
+
+/**
+
+ * \file Vector.cpp
+
+ * Este archivo contiene el desarrollo de los m&eacute;todos que simulan un vector
+
+ * \author Flor Machado y Elias Peregrina
+
+ * \date 03/02/2025
+
+ */
 //Vector::Vector(){
 //    dim = 7;
 //    for(int i = 0; i < 7 ; ++ i){
@@ -43,20 +54,6 @@ Vector::~Vector(){
 
 //***************************************************************************************
 
-void Vector::Imprimir(){
-    cout << "(";
-    for(int i = 0 ; i < dim ; ++i){
-        cout << componente[i] << ", ";
-    }
-    cout << "\b\b)";
-}
-
-void Vector::Capturar(){
-    for(int i = 0; i  < dim ; ++i){
-        cout << "Componente " << i+1 << ": ";
-        cin >> componente[i];
-    }
-}
 
 Vector Vector::operator+(const Vector v) const{
 
@@ -130,10 +127,6 @@ std::ostream & operator<< (std::ostream &salida, const Vector v){
 
  }
 
- double Vector :: operator[](int i)const {
-    if(i  <  0 || i  >= dim ) throw "indice invalido";
-    return componente[i];
- }
 
  double & Vector::operator [](int i){
     if(i  <  0 || i  >= dim ) throw "indice invalido";

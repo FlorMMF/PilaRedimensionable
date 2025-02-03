@@ -1,6 +1,18 @@
 #include <iostream>
 #include "Pila.hpp"
 #include "Vector.hpp"
+
+/**
+
+ * \file main.cpp
+
+ * Este archivo contiene las pruebas del funcionamiento de los m&eacute;todos
+
+ * \author Flor Machado y Elias Peregrina
+
+ * \date 03/02/2025
+
+ */
 using namespace std;
 
 int main()
