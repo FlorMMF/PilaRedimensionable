@@ -6,3 +6,22 @@
 
 1737136562 c:\users\surface\documents\estructura de datos\pruebapilatamvarplantillaparam\vector.hpp
 
+1738649292 source:c:\users\dell\documents\flor\lcc\cuarto semestre\estructuradatos\pilaredimensionable\pruebapilatamvarplantillaparam\main.cpp
+	<iostream>
+	"Pila.hpp"
+	"Vector.hpp"
+
+1738648679 c:\users\dell\documents\flor\lcc\cuarto semestre\estructuradatos\pilaredimensionable\pruebapilatamvarplantillaparam\pila.hpp
+	"Pila.tpp"
+
+1738648974 c:\users\dell\documents\flor\lcc\cuarto semestre\estructuradatos\pilaredimensionable\pruebapilatamvarplantillaparam\pila.tpp
+	<iostream>
+	"Pila.hpp"
+
+1738619540 c:\users\dell\documents\flor\lcc\cuarto semestre\estructuradatos\pilaredimensionable\pruebapilatamvarplantillaparam\vector.hpp
+
+1738619540 source:c:\users\dell\documents\flor\lcc\cuarto semestre\estructuradatos\pilaredimensionable\pruebapilatamvarplantillaparam\vector.cpp
+	<iostream>
+	"Vector.hpp"
+	<cmath>
+

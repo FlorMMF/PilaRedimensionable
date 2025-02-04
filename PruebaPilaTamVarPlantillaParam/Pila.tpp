@@ -15,22 +15,22 @@
 
 //******************************************
 template <typename Tipo, int cap>
-Pila<Tipo>::Pila(int cap) : capacidad(cap), tope(-1), elementos(new Tipo[cap]) {}
+Pila<Tipo, cap>::Pila(int capa) : capacidad(capa), tope(-1), elementos(new Tipo[cap]) {}
 
 template <typename Tipo, int cap>
-Pila<Tipo>::Pila(const Pila<Tipo>& otra) : capacidad(otra.capacidad), tope(otra.tope), elementos(new Tipo[otra.capacidad]) {
+Pila<Tipo, cap>::Pila(const Pila<Tipo, cap>& otra) : capacidad(otra.capacidad), tope(otra.tope), elementos(new Tipo[otra.capacidad]) {
     for (int i = 0; i <= tope; ++i) {
         elementos[i] = otra.elementos[i];
     }
 }
 
 template <typename Tipo, int cap>
-Pila<Tipo>& Pila<Tipo>::operator=(const Pila<Tipo>& otra) {
+Pila<Tipo, cap>& Pila<Tipo, cap>::operator=(const Pila<Tipo, cap>& otra) {
     if (this != &otra) {
         delete[] elementos;
         capacidad = otra.capacidad;
         tope = otra.tope;
-        elementos = new Tipo[capacidad];
+
         for (int i = 0; i <= tope; ++i) {
             elementos[i] = otra.elementos[i];
         }
@@ -39,70 +39,74 @@ Pila<Tipo>& Pila<Tipo>::operator=(const Pila<Tipo>& otra) {
 }
 
 template <typename Tipo, int cap>
-Pila<Tipo>::~Pila() {
+Pila<Tipo, cap>::~Pila() {
     delete[] elementos;
 }
 
 template <typename Tipo, int cap>
-void Pila<Tipo>::Apilar(Tipo valor) {
+void Pila<Tipo, cap>::Apilar(Tipo valor) {
     if (EstaLlena()) {
         Redimensionar();
     }
-    elementos[++tope] = valor;
+    ++tope;
+    elementos[tope] = valor;
 }
 
 template <typename Tipo, int cap>
-void Pila<Tipo>::Desapilar() {
+void Pila<Tipo, cap>::Desapilar() {
     if (EstaVacia()) throw "Esta pila está vacía...";
     --tope;
 }
 
 template <typename Tipo, int cap>
-Tipo Pila<Tipo>::ObtenerTOPE() const {
+Tipo Pila<Tipo, cap>::ObtenerTOPE() const {
     if (EstaVacia()) throw "Esta pila está vacía...";
     return elementos[tope];
 }
 
 template <typename Tipo, int cap>
-bool Pila<Tipo>::EstaVacia() const {
+bool Pila<Tipo, cap>::EstaVacia() const {
     return tope == -1;
 }
 
 template <typename Tipo, int cap>
-void Pila<Tipo>::Vaciar() {
+void Pila<Tipo, cap>::Vaciar() {
     tope = -1;
 }
 
 template <typename Tipo, int cap>
-int Pila<Tipo>::NumeroElementos() const {
+int Pila<Tipo, cap>::NumeroElementos() const {
     return tope + 1;
 }
 
 template <typename Tipo, int cap>
-int Pila<Tipo>::Capacidad() const {
+int Pila<Tipo, cap>::Capacidad() const {
     return capacidad;
 }
 
 template <typename Tipo, int cap>
-void Pila<Tipo>::imprimir() const {
+void Pila<Tipo, cap>::imprimir() const {
     for (int i = 0; i <= tope; ++i) {
         std::cout << elementos[i] << ", ";
     }
+
     std::cout << "\b\b <- TOPE" << std::endl;
+    std::cout << std::endl << Capacidad();
 }
 
 template <typename Tipo, int cap>
-void Pila<Tipo>::Redimensionar() {
-    capacidad *= 2;
-    Tipo* nuevoElemento = new Tipo[capacidad];
+void Pila<Tipo, cap>::Redimensionar() {
+
+    Tipo* nuevoElemento = new Tipo[cap*2];
     for (int i = 0; i <= tope; ++i) {
         nuevoElemento[i] = elementos[i];
     }
     delete[] elementos;
     elementos = nuevoElemento;
+    capacidad = cap*2;
 }
 
 template <typename Tipo, int cap>
-bool Pila<Tipo>::EstaLlena() const {
+bool Pila<Tipo, cap>::EstaLlena() const {
     return tope == capacidad - 1;
 }

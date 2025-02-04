@@ -18,14 +18,24 @@ using namespace std;
 int main()
 {
     Pila<int, 10> PilaInt;
-    Pila<Vector, 10> PilaVector;
-    Pila<double> PilaDouble;
-
-    PilaInt.Apilar(1000);
+    for(int i = 0; i < 12 ; ++i){
+        PilaInt.Apilar(1000);
+    }
     PilaInt.imprimir();
 
-    PilaVector.Apilar(Vector(2));
+    cout << endl;
+    Pila<double, 10> PilaDouble;
+    for(int i = 0; i < 12 ; ++i){
+        PilaDouble.Apilar('a');
+    }
+    PilaDouble.imprimir();
+
+    Pila<Vector, 10> PilaVector;
+    for(int i = 0; i < 12 ; ++i){
+        PilaVector.Apilar(Vector(2));
+    }
     PilaVector.imprimir();
+
 
     return 0;
 }
