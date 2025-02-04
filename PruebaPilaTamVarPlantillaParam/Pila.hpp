@@ -33,6 +33,32 @@ public:
      * \return void
      *
      */
+    
+     /** \brief Constructor de copias
+     * 
+     * \param const Pila, pila que se copiar&acute;
+     */
+    Pila(const Pila<Tipo>& otra);
+    
+    /** \brief Operador de asignaci&oacute;n, libera la memoria previa y copia los valores de la pila proporcionada
+     *
+     * \param const Pila, pila de la cual se copiar&acute;n los valores
+     */
+    Pila<Tipo>& operator=(const Pila<Tipo>& otra);
+    
+    /** \brief Destructor de la Pila
+     *
+     *
+     */
+    ~Pila();
+    
+    
+    /** \brief Agrega un elemento agregado a la pila
+     *  
+     * \param Tipo valor, valor el cual se agrega&acute; a la matriz
+     * \return void
+     *
+     */
     void Apilar(Tipo valor);
 
     /** \brief Quita el &uacute;  ltimo elemento agregado a la pila
@@ -56,19 +82,26 @@ public:
      */
     bool EstaVacia() const;
 
-    /** \brief Comprueba si la pila esta llena
-     *
-     * \return bool, si la pila esta llena devuelve true
-     *
-     */
-    bool EstaLlena() const;
-
     /** \brief Devuele el tope al estado inicial, simulando que la pila esta vac&iacute;  a
      *
      * \return void
      *
      */
     void Vaciar();
+
+     /** \brief Cuenta el n&uacte;mero de elementos que se encuentran en la pila
+     *
+     * \return tope + 1, aumenta en 1 el tamaño del tope de la pila
+     *
+     */
+    int NumeroElementos() const;
+    
+     /** \brief Conocer el tamaño de la pila
+     *
+     * \return capacidad, devuelve el tamaño actual de la pila (para pruebas)
+     *
+     */
+    int Capacidad() const;
 
     /** \brief Imprime la pila
      *
@@ -77,9 +110,12 @@ public:
      */
     void imprimir() const;
 private:
+    void Redimensionar();
+    bool EstaLlena() const;
+    int capacidad;
     int tope;
     Tipo elementos[cap];
-
 };
+
 #include "Pila.tpp"
 #endif // PILA_HPP_INCLUDED
