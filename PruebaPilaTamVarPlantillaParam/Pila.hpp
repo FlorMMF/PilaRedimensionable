@@ -33,28 +33,28 @@ public:
      * \return void
      *
      */
-    
+
      /** \brief Constructor de copias
-     * 
+     *
      * \param const Pila, pila que se copiar&acute;
      */
-    Pila(const Pila<Tipo>& otra);
-    
+    Pila(const Pila<Tipo, cap>& otra);
+
     /** \brief Operador de asignaci&oacute;n, libera la memoria previa y copia los valores de la pila proporcionada
      *
      * \param const Pila, pila de la cual se copiar&acute;n los valores
      */
-    Pila<Tipo>& operator=(const Pila<Tipo>& otra);
-    
+    Pila<Tipo, cap>& operator=(const Pila<Tipo, cap>& otra);
+
     /** \brief Destructor de la Pila
      *
      *
      */
     ~Pila();
-    
-    
+
+
     /** \brief Agrega un elemento agregado a la pila
-     *  
+     *
      * \param Tipo valor, valor el cual se agrega&acute; a la matriz
      * \return void
      *
@@ -95,7 +95,7 @@ public:
      *
      */
     int NumeroElementos() const;
-    
+
      /** \brief Conocer el tamaño de la pila
      *
      * \return capacidad, devuelve el tamaño actual de la pila (para pruebas)
@@ -114,7 +114,7 @@ private:
     bool EstaLlena() const;
     int capacidad;
     int tope;
-    Tipo elementos[cap];
+    Tipo* elementos;
 };
 
 #include "Pila.tpp"
